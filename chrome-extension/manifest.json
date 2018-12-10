@@ -1,0 +1,27 @@
+{
+  "name":   "trace",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "description": "用来保存指定网站的阅读记录，通常用在gitbook或者类似模式的网站上",
+  "browser_action": {
+    "default_icon": "assets/logo.png",
+    "default_title": "Trace",
+    "default_popup": "dist/index.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["js/content_script.js"]
+    }
+  ],
+  "permissions": [
+    "contextMenus",
+    "storage",
+    "tabs",
+    "<all_urls>"
+  ],
+  "background":
+    {
+       "scripts": ["js/background.js"]
+    }
+}
