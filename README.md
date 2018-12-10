@@ -25,4 +25,4 @@
 - [ ] 添加测试。
 - [ ] 更复杂的功能。如时长统计，提醒。
 ### serialize-storage
-用到chrome.storage时写了一个小工具，[serialize-storage](!https://github.com/webbillion/serialize-storage)虽然实际开发后没怎么用到，欢迎使用。
+用到chrome.storage时写了一个小工具，[serialize-storage](https://github.com/webbillion/serialize-storage)虽然实际开发后没怎么用到，欢迎使用。
