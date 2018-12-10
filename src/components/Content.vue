@@ -182,8 +182,9 @@ export default {
     async getAllRecords() {
       let records = await getAllRecords({
         toArray: true,
-        filter: record => record.mode
+        filter: record => record.mode && record.history.length
       })
+      console.log(records)
       this.records = formatRecords(records)
     },
     async getConfig() {
