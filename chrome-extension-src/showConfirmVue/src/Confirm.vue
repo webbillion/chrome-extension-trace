@@ -1,5 +1,5 @@
 <template>
-  <div v-if="showConfirm">
+  <div v-if="showConfirm" class="my-app">
     <mu-dialog
       title="这里是亮闪闪的提示"
       class="confirm-dialog"
@@ -43,7 +43,7 @@
 <script>
 
 export default {
-  data() {
+  data () {
     return {
       showConfirm: false,
       showBigImg: false,
@@ -75,9 +75,23 @@ export default {
       this.showConfirm = false
       this.confirmReject(this.notAuto)
     }
+  },
+  mounted () {
+    let styles = document.querySelectorAll('style')
+    for (let i in styles) {
+      let styleElInner = styles[i].innerHTML
+      if (styleElInner && styleElInner.indexOf('/*! normalize.css v4.1.1 | MIT License | github.com/necolas/normalize.css */') > -1) {
+        styles[i].remove()
+      }
+    }
   }
 }
 </script>
+<style lang="less">
+* {
+    box-sizing: border-box;
+  }
+</style>
 
 <style scoped lang="less">
 p {
