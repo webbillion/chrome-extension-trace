@@ -88,57 +88,57 @@ export default {
 }
 </script>
 <style lang="less">
-* {
-    box-sizing: border-box;
-  }
+.mu-button-wrapper {
+  box-sizing: border-box;
+}
 </style>
 
 <style scoped lang="less">
-p {
-  margin: 0;
-}
-.history-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  .history-title,
-  .history-percent {
-    width: 100%;
+  p {
+    margin: 0;
   }
-  img.preview {
-    height: 300px;
-    cursor: pointer;
-    +img {
-      display: none;
+  .history-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .history-title,
+    .history-percent {
+      width: 100%;
     }
-    &[lazy=error] {
-      // 暂定加载失败直接不显示
-      display: none;
-      // 暂时取消
-      // +img {
-      //   display: inline-block;
-      // }
+    img.preview {
+      height: 300px;
+      cursor: pointer;
+      +img {
+        display: none;
+      }
+      &[lazy=error] {
+        // 暂定加载失败直接不显示
+        display: none;
+        // 暂时取消
+        // +img {
+        //   display: inline-block;
+        // }
+      }
+      &.big {
+        position: fixed;
+        width: 80%;
+        height: auto;
+        z-index: 1;
+      }
     }
-    &.big {
-      position: fixed;
-      width: 80%;
-      height: auto;
-      z-index: 1;
+  }
+  .auto-check {
+    position: absolute;
+    // 和内边距已有
+    left: 8px;
+  }
+  .confirm-dialog {
+    /deep/ .mu-dialog {
+      min-width: 400px;
+    }
+    /deep/ .mu-dialog-actions {
+      position: relative;
     }
   }
-}
-.auto-check {
-  position: absolute;
-  // 和内边距已有
-  left: 8px;
-}
-.confirm-dialog {
-  /deep/ .mu-dialog {
-    min-width: 400px;
-  }
-  /deep/ .mu-dialog-actions {
-    position: relative;
-  }
-}
 </style>
